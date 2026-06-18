@@ -1,16 +1,45 @@
-function createPost(){
+function createProject()
+{
+    let name = document.getElementById("projectName").value;
 
-let text=document.getElementById("postInput").value;
+    if(name === "")
+    {
+        alert("Enter Project Name");
+        return;
+    }
 
-let post=document.createElement("div");
-post.className="post";
+    let project = document.createElement("div");
 
-post.innerHTML=`
-<p>${text}</p>
-<button onclick="this.innerHTML='Liked ❤️'">Like</button>
-`;
+    project.className = "project";
 
-document.getElementById("feed").appendChild(post);
+    project.innerHTML =
+    `
+    <h3>${name}</h3>
 
-document.getElementById("postInput").value="";
+    <button onclick="addTask(this)">
+    Add Task
+    </button>
+
+    <ul></ul>
+    `;
+
+    document.getElementById("projectList")
+    .appendChild(project);
+
+    document.getElementById("projectName")
+    .value = "";
+}
+
+function addTask(button)
+{
+    let task = prompt("Enter Task");
+
+    if(task)
+    {
+        let li = document.createElement("li");
+
+        li.innerText = task;
+
+        button.nextElementSibling.appendChild(li);
+    }
 }

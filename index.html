@@ -1,19 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Social Media Platform</title>
-<link rel="stylesheet" href="style.css">
+    <title>Project Management Tool</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h1>📱 Social Media App</h1>
+    <h1>📋 Project Management Tool</h1>
 
-<input type="text" id="postInput" placeholder="What's on your mind?">
-<button onclick="createPost()">Post</button>
+    <a href="login.html">Login</a>
+    <a href="register.html">Register</a>
 
-<div id="feed"></div>
+    <h2>Create Project</h2>
 
-<script src="script.js"></script>
+    <input type="text" id="projectName" placeholder="Project Name">
+
+    <button onclick="createProject()">Create</button>
+
+    <h2>Projects</h2>
+
+    <div id="projectList"></div>
+
+    <script src="script.js"></script>
 
 </body>
 </html>
